@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="dark"> <head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+<style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" rel="stylesheet"/>
+<meta content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<style>
+                #map_8206f50fb2e1a4ada8b28781bc2c6f80 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+ rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">  </head>
+ 
+   <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+    <div class="container-fluid" >
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+            <a class="navbar-brand" href="#" > <img src="./bed_icon.png" alt="erooms icon" height="30"> </a>
+          </li> 
+             <li class="nav-item">
+            <a class="navbar-brand" href="#" > <h2>eRooms</h2> </a>
+          </li> 
+          <li class="nav-item">
+           <h4> <a class="nav-link active" aria-current="page" href="index_gr.html">Αρχική</a></h4>
+          </li>
+          <li class="nav-item">
+            <h4>  <a class="nav-link active" aria-current="page" href="longtermmap_gr.html">Χάρτης Μακροχρόνιας Ενοικίασης</a></h4>
+          </li> 
+          <li class="nav-item">
+             <h4> <a class="nav-link active" aria-current="page" href="shorttermmap.html">Χάρτης Βραχυχρόνιας Ενοικίασης</a></h4>
+          </li> 
+
+          <li class="nav-item">
+            <h4>  <a class="nav-link active" aria-current="page" href="register_gr.html">Καταχωρήστε την Ιδιοκτησίας(Δωρεάν!)</a></h4>
+          </li> 
+
+          <li class="nav-item">
+            <h4>  <a class="nav-link active" aria-current="page" href="download_gr.html">Λήψη Κιν. Εφαρμογής</a></h4>
+          </li> 
+
+           
+          <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="index.html">
+              <img src="./uk.svg" alt="british icon" height="30"> </a>
+          </li> 
+
+            <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="index.html">
+             <h4>English</h4></a>
+          </li> 
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index_gr.html">
+              <img src="./gr.svg" alt="british icon" height="30">
+               </a>
+          </li> 
+
+           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index_gr.html">
+               <h4> Ελληνικά</h4></a>
+          </li> 
+
+          <li class="nav-item">
+            <h4> <a class="nav-link" href="about_gr.html">About</a></h4>
+          
+         
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container-fluid">
+<a class="navbar-brand" href="#"><h3><img alt="erooms icon" height="30" src="./bed_icon.png"/>eRooms</h3></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+<h4> <a aria-current="page" class="nav-link active" href="index.html">Home</a></h4>
+</li>
+<li class="nav-item">
+<h4><a aria-current="page" class="nav-link active" href="longterm.html">LongTerm Map</a></h4>
+</li>
+<li class="nav-item">
+<h4> <a aria-current="page" class="nav-link active" href="shorttermmap.html">ShortTerm Map</a></h4>
+</li>
+<li class="nav-item">
+<h4> <a aria-current="page" class="nav-link active" href="register.html">Register Your Property(free!)</a></h4>
+</li>
+<li class="nav-item">
+<h4> <a aria-current="page" class="nav-link active" href="download.html">Download Mobile App</a></h4>
+</li>
+<li class="nav-item">
+<h4> <a aria-current="page" class="nav-link active" href="index.html">
+<img alt="british icon" height="30" src="./uk.svg"/>
+             English</a></h4>
+</li>
+<li class="nav-item">
+<h4> <a aria-current="page" class="nav-link active" href="index_gr.html">
+<img alt="british icon" height="30" src="./gr.svg"/> 
+              Ελληνικά</a> </h4>
+</li>
+<li class="nav-item">
+<h4><a class="nav-link" href="#">About</a></h4>
+</li></ul>
+</div>
+</div>
+</nav>
+<div class="folium-map" id="map_8206f50fb2e1a4ada8b28781bc2c6f80"></div>
+</body>
+<script>
+    
+    
+            var map_8206f50fb2e1a4ada8b28781bc2c6f80 = L.map(
+                "map_8206f50fb2e1a4ada8b28781bc2c6f80",
+                {
+                    center: [39.67, 20.86],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_88d6e70e28c9da13332b38d5d543df76 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_88d6e70e28c9da13332b38d5d543df76.addTo(map_8206f50fb2e1a4ada8b28781bc2c6f80);
+        
+    
+            var marker_ace9d1049d9fd1ba9a5f1ff3ab58bed4 = L.marker(
+                [39.6642993482506, 20.8471520141187],
+                {
+}
+            ).addTo(map_8206f50fb2e1a4ada8b28781bc2c6f80);
+        
+    
+        var popup_ec6578983c6010ecccadf81feffcc928 = L.popup({
+  "maxWidth": 700,
+});
+
+        
+            
+                var html_028e03418515e16e4efec86972270bda = $(`<div id="html_028e03418515e16e4efec86972270bda" style="width: 100.0%; height: 100.0%;">             <!DOCTYPE html>             <html data-bs-theme="dark">               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"                  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">                                  <h1> Thodoris Apartment I</h1>               <h1>Name: Θοδωρής(Thodoris)</h1>              <h1>LastName: -</h1>              <h1>PhoneNumber: +306940687222</h1>             <h1>Address: Σπυρου Λαμπρου 20 </h1>             <h1>Price: 0 Euros </h1>              <p><img src = "./eRooms_Photos/ThodorisApartmentI/ThodorisApartmentI.gif" width = "400"  height="300" style = "border-radius: 50px;"/></p>             <h1>Website 2: Δυαρι 55τ.μ.  με  δυο κλιματιστικά . Επιπλωμένο. Ανακαινισμένο πριν 15 έτη. Διπλα τζάμια. 4ος όροφος.
+ Κατάσταση νοικιασμένο.Τιμή Συζητήσιμη. </h1>                                     </html>               </div>`)[0];
+                popup_ec6578983c6010ecccadf81feffcc928.setContent(html_028e03418515e16e4efec86972270bda);
+            
+        
+
+        marker_ace9d1049d9fd1ba9a5f1ff3ab58bed4.bindPopup(popup_ec6578983c6010ecccadf81feffcc928)
+        ;
+
+        
+    
+    
+            var marker_aca29f93174a33b468514d651d684223 = L.marker(
+                [39.6643993482506, 20.8475212174449],
+                {
+}
+            ).addTo(map_8206f50fb2e1a4ada8b28781bc2c6f80);
+        
+    
+        var popup_7dc8adaedf3f74e660ce362744a214d4 = L.popup({
+  "maxWidth": 700,
+});
+
+        
+            
+                var html_4b1e0d15e017b85d3d451ad9b0fe6b6c = $(`<div id="html_4b1e0d15e017b85d3d451ad9b0fe6b6c" style="width: 100.0%; height: 100.0%;">             <!DOCTYPE html>             <html data-bs-theme="dark">               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"                  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">                                  <h1> Thodoris Apartment II</h1>               <h1>Name: Θοδωρής(Thodoris)</h1>              <h1>LastName: -</h1>              <h1>PhoneNumber: +306940687222</h1>             <h1>Address: Σπυρου Λαμπρου 20 </h1>             <h1>Price: 0 Euros </h1>              <p><img src = "./eRooms_Photos/ThodorisApartmentII/ThodorisApartmentII.gif" width = "400"  height="300" style = "border-radius: 50px;"/></p>             <h1>Website 2: Δυαρι 59τ.μ.  με  δυο κλιματιστικά . Επιπλωμένο. Ανακαινισμένο πριν 15 έτη. Διπλα τζάμια. 4ος όροφος.
+ Κατάσταση νοικιασμένο.Τιμή Συζητήσιμη. </h1>                                     </html>               </div>`)[0];
+                popup_7dc8adaedf3f74e660ce362744a214d4.setContent(html_4b1e0d15e017b85d3d451ad9b0fe6b6c);
+            
+        
+
+        marker_aca29f93174a33b468514d651d684223.bindPopup(popup_7dc8adaedf3f74e660ce362744a214d4)
+        ;
+
+        
+    
+</script>
+</html>

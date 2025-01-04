@@ -1,0 +1,47 @@
+ <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+    <div class="container-fluid" >
+     <a class="navbar-brand" href="#" ><h3><img src="./bed_icon.png" alt="erooms icon" height="30">eRooms</h3></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+             <h4> <a class="nav-link active" aria-current="page" href="index.html">Home</a></h4>
+          </li>
+          <li class="nav-item">
+              <h4><a class="nav-link active" aria-current="page" href="longterm.html">LongTerm Map</a></h4>
+          </li> 
+          <li class="nav-item">
+           <h4> <a class="nav-link active" aria-current="page" href="shorttermmap.html">ShortTerm Map</a></h4>
+          </li> 
+
+          <li class="nav-item">
+           <h4> <a class="nav-link active" aria-current="page" href="register.html">Register Your Property(free!)</a></h4>
+          </li> 
+
+          <li class="nav-item">
+           <h4> <a class="nav-link active" aria-current="page" href="download.html">Download Mobile App</a></h4>
+          </li> 
+
+           
+          <li class="nav-item">
+            <h4> <a class="nav-link active" aria-current="page" href="index.html">
+             <img src="./uk.svg" alt="british icon" height="30">
+             English</a></h4>
+          </li> 
+
+          <li class="nav-item">
+           <h4> <a class="nav-link active" aria-current="page" href="index_gr.html">
+              <img src="./gr.svg" alt="british icon" height="30"> 
+              ????????</a> </h4>
+          </li> 
+
+          <li class="nav-item">
+          <h4><a class="nav-link" href="#">About</a></h4>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
