@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="dark"> <head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+<style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" rel="stylesheet"/>
+<meta content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<style>
+                #map_19017517c6921e6da2d3bba49b131441 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+ rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">  </head>
+ 
+   <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+    <div class="container-fluid" >
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+            <a class="navbar-brand" href="#" > <img src="./bed_icon.png" alt="erooms icon" height="30"> </a>
+          </li> 
+             <li class="nav-item">
+            <a class="navbar-brand" href="#" > <h2>eRooms</h2> </a>
+          </li> 
+          <li class="nav-item">
+           <h4> <a class="nav-link active" aria-current="page" href="index_gr.html">Αρχική</a></h4>
+          </li>
+          <li class="nav-item">
+            <h4>  <a class="nav-link active" aria-current="page" href="longtermmap_gr.html">Χάρτης Μακροχρόνιας Ενοικίασης</a></h4>
+          </li> 
+          <li class="nav-item">
+             <h4> <a class="nav-link active" aria-current="page" href="shorttermmap.html">Χάρτης Βραχυχρόνιας Ενοικίασης</a></h4>
+          </li> 
+
+          <li class="nav-item">
+            <h4>  <a class="nav-link active" aria-current="page" href="register_gr.html">Καταχωρήστε την Ιδιοκτησίας(Δωρεάν!)</a></h4>
+          </li> 
+
+          <li class="nav-item">
+            <h4>  <a class="nav-link active" aria-current="page" href="download_gr.html">Λήψη Κιν. Εφαρμογής</a></h4>
+          </li> 
+
+           
+          <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="index.html">
+              <img src="./uk.svg" alt="british icon" height="30"> </a>
+          </li> 
+
+            <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="index.html">
+             <h4>English</h4></a>
+          </li> 
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index_gr.html">
+              <img src="./gr.svg" alt="british icon" height="30">
+               </a>
+          </li> 
+
+           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index_gr.html">
+               <h4> Ελληνικά</h4></a>
+          </li> 
+
+          <li class="nav-item">
+            <h4> <a class="nav-link" href="about_gr.html">About</a></h4>
+          
+         
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+<body>
+<div class="folium-map" id="map_19017517c6921e6da2d3bba49b131441"></div>
+</body>
+<script>
+    
+    
+            var map_19017517c6921e6da2d3bba49b131441 = L.map(
+                "map_19017517c6921e6da2d3bba49b131441",
+                {
+                    center: [39.67, 20.86],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4d496997e6ff18e573bb8d57eec03f6e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4d496997e6ff18e573bb8d57eec03f6e.addTo(map_19017517c6921e6da2d3bba49b131441);
+        
+    
+            var marker_40d504bab5b81d2a96f5edc4ac2acc6f = L.marker(
+                [39.6871375778412, 20.827749874948],
+                {
+}
+            ).addTo(map_19017517c6921e6da2d3bba49b131441);
+        
+    
+        var popup_7f5a1ba80d24e3c07eed902936564117 = L.popup({
+  "maxWidth": 700,
+});
+
+        
+            
+                var html_93c34591271743b9f23fd8f71403b1b8 = $(`<div id="html_93c34591271743b9f23fd8f71403b1b8" style="width: 100.0%; height: 100.0%;">             <!DOCTYPE html>             <html>               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"                  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">                                                                   <h1> Kompso Studio</h1>               <h1>Name: 'Ελλη(Ellie)</h1>              <h1>LastName: -</h1>              <h1>PhoneNumber: +306944044043(Viber)</h1>             <h1>Address: Ιερολοχιτών 19 και Ίωνος Δραγούμη  Εξοχή(Κοντά στο νοσοκομείο Χατζηκώστα) </h1>             <h1>Price: 40 Euros </h1>              <p><img src = "./eRooms_Photos/KompsoStudio/KompsoStudio.gif" width = "400"  height="300" style = "border-radius: 50px;"/></p>             <h1>Website 2: - </h1>                                     </html>               </div>`)[0];
+                popup_7f5a1ba80d24e3c07eed902936564117.setContent(html_93c34591271743b9f23fd8f71403b1b8);
+            
+        
+
+        marker_40d504bab5b81d2a96f5edc4ac2acc6f.bindPopup(popup_7f5a1ba80d24e3c07eed902936564117)
+        ;
+
+        
+    
+    
+            var marker_2ff4243d59c67ec417a16f03762181f0 = L.marker(
+                [39.66465, 20.84807],
+                {
+}
+            ).addTo(map_19017517c6921e6da2d3bba49b131441);
+        
+    
+        var popup_445fb324b7abbd6cab56da385e283edc = L.popup({
+  "maxWidth": 700,
+});
+
+        
+            
+                var html_415849291937ca52728369f711e66139 = $(`<div id="html_415849291937ca52728369f711e66139" style="width: 100.0%; height: 100.0%;">             <!DOCTYPE html>             <html>               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"                  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">                                                                   <h1> Plateia Pargis Apartments I</h1>               <h1>Name: Λαμπρινή(Lamprini)</h1>              <h1>LastName: -</h1>              <h1>PhoneNumber: +306956520958(Viber)</h1>             <h1>Address: Σακελλαρίου 5 </h1>             <h1>Price: 40 Euros </h1>              <p><img src = "./eRooms_Photos/PlateiaPargisApartmentsI/PlateiaPargisApartmentsI.gif" width = "400"  height="300" style = "border-radius: 50px;"/></p>             <h1>Website 2: - </h1>                                     </html>               </div>`)[0];
+                popup_445fb324b7abbd6cab56da385e283edc.setContent(html_415849291937ca52728369f711e66139);
+            
+        
+
+        marker_2ff4243d59c67ec417a16f03762181f0.bindPopup(popup_445fb324b7abbd6cab56da385e283edc)
+        ;
+
+        
+    
+    
+            var marker_f5af6bb64b2aa5f629bfc7012e5f747f = L.marker(
+                [39.6629049672304, 20.8488582385016],
+                {
+}
+            ).addTo(map_19017517c6921e6da2d3bba49b131441);
+        
+    
+        var popup_c1f3bc5a12ffc682329cc8bbd3cfdb12 = L.popup({
+  "maxWidth": 700,
+});
+
+        
+            
+                var html_0b84d4626c18fd6e773af1d1d24aa737 = $(`<div id="html_0b84d4626c18fd6e773af1d1d24aa737" style="width: 100.0%; height: 100.0%;">             <!DOCTYPE html>             <html>               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"                  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">                                                                   <h1> Ilis House</h1>               <h1>Name: Ηλίας(Ilias)</h1>              <h1>LastName: -</h1>              <h1>PhoneNumber: +306944193701(Viber-WhatsApp)</h1>             <h1>Address: Σμύρνης 13 </h1>             <h1>Price: 40 Euros </h1>              <p><img src = "./eRooms_Photos/IlisHouse/IlisHouse.gif" width = "400"  height="300" style = "border-radius: 50px;"/></p>             <h1>Website 2: - </h1>                                     </html>               </div>`)[0];
+                popup_c1f3bc5a12ffc682329cc8bbd3cfdb12.setContent(html_0b84d4626c18fd6e773af1d1d24aa737);
+            
+        
+
+        marker_f5af6bb64b2aa5f629bfc7012e5f747f.bindPopup(popup_c1f3bc5a12ffc682329cc8bbd3cfdb12)
+        ;
+
+        
+    
+    
+            var marker_37da2f45ae13d0b74d371f47254a374b = L.marker(
+                [39.634, 20.8547],
+                {
+}
+            ).addTo(map_19017517c6921e6da2d3bba49b131441);
+        
+    
+        var popup_fef9da937f6aa307a1a0e7080ecca767 = L.popup({
+  "maxWidth": 700,
+});
+
+        
+            
+                var html_1af9a8e61a921af714394ea48c065d94 = $(`<div id="html_1af9a8e61a921af714394ea48c065d94" style="width: 100.0%; height: 100.0%;">             <!DOCTYPE html>             <html>               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"                  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">                                                                   <h1> Boutique At Historic Centrum 2</h1>               <h1>Name: Αλέξιος(Aleksis)</h1>              <h1>LastName: -</h1>              <h1>PhoneNumber: +3069448888xx</h1>             <h1>Address: Tositsa 10 </h1>             <h1>Price: 12 Euros </h1>              <p><img src = "./eRooms_Photos/BoutiqueAtHistoricCentrum2/BoutiqueAtHistoricCentrum2.gif" width = "400"  height="300" style = "border-radius: 50px;"/></p>             <h1>Website 2: - </h1>                                     </html>               </div>`)[0];
+                popup_fef9da937f6aa307a1a0e7080ecca767.setContent(html_1af9a8e61a921af714394ea48c065d94);
+            
+        
+
+        marker_37da2f45ae13d0b74d371f47254a374b.bindPopup(popup_fef9da937f6aa307a1a0e7080ecca767)
+        ;
+
+        
+    
+    
+            var marker_407533f24a90bd77bdf2661fe88b0ad3 = L.marker(
+                [39.6666919522511, 20.8512390237053],
+                {
+}
+            ).addTo(map_19017517c6921e6da2d3bba49b131441);
+        
+    
+        var popup_cfc9b4ac88e0823e9744c069a93ca1ad = L.popup({
+  "maxWidth": 700,
+});
+
+        
+            
+                var html_3d8066ea4587adb465aba0780bf6e919 = $(`<div id="html_3d8066ea4587adb465aba0780bf6e919" style="width: 100.0%; height: 100.0%;">             <!DOCTYPE html>             <html>               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"                  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">                                                                   <h1> Elegant Studio</h1>               <h1>Name: Κατερίνα(Katerina)</h1>              <h1>LastName: -</h1>              <h1>PhoneNumber: +306951341056(Viber/Whatsapp/Telegram)</h1>             <h1>Address:  Χαρ. Τρικουπη 14 </h1>             <h1>Price: 60 Euros </h1>              <p><img src = "./eRooms_Photos/ElegantStudio/ElegantStudio.gif" width = "400"  height="300" style = "border-radius: 50px;"/></p>             <h1>Website 2: - </h1>                                     </html>               </div>`)[0];
+                popup_cfc9b4ac88e0823e9744c069a93ca1ad.setContent(html_3d8066ea4587adb465aba0780bf6e919);
+            
+        
+
+        marker_407533f24a90bd77bdf2661fe88b0ad3.bindPopup(popup_cfc9b4ac88e0823e9744c069a93ca1ad)
+        ;
+
+        
+    
+</script>
+</html>
